@@ -52,10 +52,5 @@ Article.fetchAll = () => {
     $.getJSON('data/hackerIpsum.json')
       .then(data => console.log(data))
       .catch(err => console.error(err))
-    // $.postJSON('data/hackerIpsum.json',)
-    //   .then(success => console.log(success))
-    //   .catch(err => console.error(err))
-    // $.getJSON('.article-template')
-    // .then( data => console.log(data))
   }
 }
