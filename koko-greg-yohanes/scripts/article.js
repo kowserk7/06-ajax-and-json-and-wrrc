@@ -48,6 +48,11 @@ Article.fetchAll = () => {
     Article.loadAll();
 
   } else {
-
+    $.getJSON('data/hackerIpsum.json')
+      .then(data => console.log(data))
+      .catch(err => console.error(err))
+    $.postJSON('data/hackerIpsum.json')
+      .then(success => console.log(success))
+      .catch(err => console.error(err))
   }
 }
