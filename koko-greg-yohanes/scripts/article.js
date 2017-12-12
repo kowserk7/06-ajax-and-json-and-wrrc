@@ -45,13 +45,11 @@ Article.fetchAll = () => {
   // REVIEW: What is this 'if' statement checking for? Where was the rawData set to local storage?
   if (localStorage.rawData) {
 
-    Article.loadAll();
+    Article.loadAll(JSON.parse(localStorage.rawData));
 
   } else {
-    // let storage = $.getJSON('data/hackerIpsum.json')
-    localStorage.setItem('localData', $.getJSON('data/hackerIpsum.json'))
-    $.getJSON('data/hackerIpsum.json')
-      .then(data => console.log(data))
-      .catch(err => console.error(err))
+    $.getJSON('./data/hackerIpsum.json').then(data => localStorage.rawData = JSON.stringify(data))
   }
+  articleView.initIndexPage();
 }
+
