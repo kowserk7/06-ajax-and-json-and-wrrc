@@ -13,8 +13,7 @@ function Article (rawDataObj) {
 Article.all = [];
 
 // COMMENT: Why isn't this method written as an arrow function?
-// PUT YOUR RESPONSE HERE
-//Because this function includes ".this" requesting global content that cannot be successfully requested using the arrow method
+// Because this function includes ".this" requesting global content that cannot be successfully requested using the arrow method
 Article.prototype.toHtml = function() {
   let template = Handlebars.compile($('#article-template').text());
 
@@ -50,7 +49,9 @@ Article.fetchAll = () => {
 
   } else {
     $.getJSON('data/hackerIpsum.json')
-      .then(data => console.log(data))
+      .then(data => {
+        
+      })
       .catch(err => console.error(err))
   }
 }
