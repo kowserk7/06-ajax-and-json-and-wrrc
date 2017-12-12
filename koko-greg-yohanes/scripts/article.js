@@ -49,13 +49,13 @@ Article.fetchAll = () => {
     Article.loadAll();
 
   } else {
-    $.get('data/hackerIpsum.json')
+    $.getJSON('data/hackerIpsum.json')
       .then(data => console.log(data))
       .catch(err => console.error(err))
-    $.post('data/hackerIpsum.json', { })
-      .then(success => console.log(success))
-      .catch(err => console.error(err))
-    $.getJSON('.article-template')
-    .then( data => console.log(data))
+    // $.postJSON('data/hackerIpsum.json',)
+    //   .then(success => console.log(success))
+    //   .catch(err => console.error(err))
+    // $.getJSON('.article-template')
+    // .then( data => console.log(data))
   }
 }
