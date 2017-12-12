@@ -14,6 +14,7 @@ Article.all = [];
 
 // COMMENT: Why isn't this method written as an arrow function?
 // PUT YOUR RESPONSE HERE
+//Because this function includes ".this" requesting global content that cannot be successfully requested using the arrow method
 Article.prototype.toHtml = function() {
   let template = Handlebars.compile($('#article-template').text());
 
@@ -48,11 +49,13 @@ Article.fetchAll = () => {
     Article.loadAll();
 
   } else {
-    $.getJSON('data/hackerIpsum.json')
+    $.get('data/hackerIpsum.json')
       .then(data => console.log(data))
       .catch(err => console.error(err))
-    $.postJSON('data/hackerIpsum.json')
+    $.post('data/hackerIpsum.json', { })
       .then(success => console.log(success))
       .catch(err => console.error(err))
+    $.getJSON('.article-template')
+    .then( data => console.log(data))
   }
 }
