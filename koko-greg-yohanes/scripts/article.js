@@ -48,10 +48,10 @@ Article.fetchAll = () => {
     Article.loadAll();
 
   } else {
+    // let storage = $.getJSON('data/hackerIpsum.json')
+    localStorage.setItem('localData', $.getJSON('data/hackerIpsum.json'))
     $.getJSON('data/hackerIpsum.json')
-      .then(data => {
-        
-      })
+      .then(data => console.log(data))
       .catch(err => console.error(err))
   }
 }
