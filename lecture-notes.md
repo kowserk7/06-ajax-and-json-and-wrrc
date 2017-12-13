@@ -32,7 +32,19 @@ this is how to see all the packages ive currenty installed in the terminal. This
 #part 3 demo code of using express
 express allows us to send a request server which will then validate the request and see if theres an end point of the request to reply to. Like a navigation guide or traffic cop/ROUTING is the actual term for this part of the process
 
+app.use(express.static())... this will open all the express modules you can input. aka listening for requests to come in
 
+app.get(endpoint, callback)
+app.get('/', (request, response) => {
 
+})
+app.get.('/hello', (req, res) => {
 
+})
 
+app.get('/bye', (req, res) => {
+
+})
+// app.post()
+// app.put()
+// app.delete()
